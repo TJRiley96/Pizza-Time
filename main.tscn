@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dv0ipqyhwkq3l"]
+
+[node name="Main" type="Node" unique_id=292211403]
+process_mode = 3
+
+[node name="Systems" type="Node" parent="." unique_id=691993263]
+
+[node name="World" type="Node2D" parent="Systems" unique_id=1577481153]
+process_mode = 1
+position = Vector2(0, -1)
+
+[node name="Level" type="Node2D" parent="Systems/World" unique_id=181122404]
+
+[node name="HudLayer" type="CanvasLayer" parent="." unique_id=346139058]
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=1881727284]
+process_mode = 2
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1057843704]
+process_mode = 3
+
+[node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1841271509]
+process_mode = 3
