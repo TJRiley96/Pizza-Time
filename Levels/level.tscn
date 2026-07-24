@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bwbqh0cg0dyr8"]
 
-[sub_resource type="TileSet" id="TileSet_sh3d0"]
-
 [node name="Level" type="Node2D" unique_id=1381265801]
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=650909499]
-tile_set = SubResource("TileSet_sh3d0")
 
 [node name="RoadLayer" type="TileMapLayer" parent="." unique_id=977795131]
+position = Vector2(1, 0)
+
+[node name="BuildingLayer" type="TileMapLayer" parent="." unique_id=621704939]
+position = Vector2(1, 0)
+
+[node name="MiscLayer" type="TileMapLayer" parent="." unique_id=386655072]
 position = Vector2(1, 0)

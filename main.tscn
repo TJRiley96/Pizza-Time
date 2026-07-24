@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dv0ipqyhwkq3l"]
 
-[ext_resource type="PackedScene" uid="uid://ctmic4mm837se" path="res://Levels/prototype_level.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ctmic4mm837se" path="res://Levels/Prototype/prototype_level.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dtg4tsioxi8yf" path="res://Scenes/Car/car.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node" unique_id=292211403]

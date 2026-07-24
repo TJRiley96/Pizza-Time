@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://du1yd6b1x8uva"]
+
+[ext_resource type="PackedScene" uid="uid://bwbqh0cg0dyr8" path="res://Levels/level.tscn" id="1_n0qsc"]
+[ext_resource type="TileSet" uid="uid://cvuxmpswqve0j" path="res://Assets/Tilesets/japan_tile_set.tres" id="2_dilhk"]
+
+[node name="Level 1" unique_id=1381265801 instance=ExtResource("1_n0qsc")]
+
+[node name="GroundLayer" parent="." index="0" unique_id=650909499]
+tile_set = ExtResource("2_dilhk")
+
+[node name="RoadLayer" parent="." index="1" unique_id=977795131]
+tile_set = ExtResource("2_dilhk")
+
+[node name="BuildingLayer" parent="." index="2" unique_id=621704939]
+tile_set = ExtResource("2_dilhk")
+
+[node name="MiscLayer" parent="." index="3" unique_id=386655072]
+tile_set = ExtResource("2_dilhk")
