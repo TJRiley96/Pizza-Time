@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvaqc8nblh4if"
-path="res://.godot/imported/japanese_city_tileset.png-1e3f99aa768877cd8ffc0b7ca282bbc2.ctex"
+uid="uid://dvo8ohr12gpht"
+path="res://.godot/imported/clean_city_tileset.png-7459b0316a7d7f3304b78358da67dc83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/japanese_city_tileset.png"
-dest_files=["res://.godot/imported/japanese_city_tileset.png-1e3f99aa768877cd8ffc0b7ca282bbc2.ctex"]
+source_file="res://Assets/Graphics/clean_city_tileset.png"
+dest_files=["res://.godot/imported/clean_city_tileset.png-7459b0316a7d7f3304b78358da67dc83.ctex"]
 
 [params]
 
