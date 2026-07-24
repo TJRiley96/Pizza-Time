@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	get_input()
 	
-	print(global_position, velocity)
+	#print(global_position, velocity)
 	if throttle:
 		rotation += steer_direction * steering_angle * delta
 		velocity = throttle * SPEED * transform.x	
@@ -42,7 +42,7 @@ func get_input() -> void:
 	steer_direction = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steering_angle)
 	
 	throttle = Input.get_axis("throttle_backwards", "throttle_forward")
-	print("Steering direction: ",steer_direction, " Throttle: ",throttle)
+	#print("Steering direction: ",steer_direction, " Throttle: ",throttle)
 	
 	
 func calculate_steering(delta: float) -> void:
