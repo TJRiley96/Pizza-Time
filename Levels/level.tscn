@@ -7,7 +7,10 @@
 [node name="RoadLayer" type="TileMapLayer" parent="." unique_id=977795131]
 position = Vector2(1, 0)
 
-[node name="BuildingLayer" type="TileMapLayer" parent="." unique_id=621704939]
+[node name="BottomBuildingLayer" type="TileMapLayer" parent="." unique_id=444366417]
+position = Vector2(1, 0)
+
+[node name="TopBuildingLayer" type="TileMapLayer" parent="." unique_id=621704939]
 position = Vector2(1, 0)
 
 [node name="MiscLayer" type="TileMapLayer" parent="." unique_id=386655072]
