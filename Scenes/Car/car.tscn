@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://dtg4tsioxi8yf"]
 
 [ext_resource type="Texture2D" uid="uid://dpd3uttm4trry" path="res://Assets/Prototype/PNG/Cars/car_red_small_4.png" id="1_e7e8e"]
+[ext_resource type="Script" uid="uid://05wu3xbi45bq" path="res://Scenes/Car/scripts/car.gd" id="1_y6gko"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh3d0"]
-radius = 19.0
-height = 70.0
+radius = 20.0
+height = 66.0
 
 [node name="Car" type="CharacterBody2D" unique_id=1873229434]
+script = ExtResource("1_y6gko")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364256406]
+rotation = 1.5707964
 texture = ExtResource("1_e7e8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448007129]
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sh3d0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1556490805]
