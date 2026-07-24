@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	get_input()
 	
 	#
-	print(global_position, velocity)
+	#print(global_position, velocity)
 	if throttle:
 		rotation += steer_direction * steering_angle * delta
 		velocity = throttle * SPEED * transform.x	
