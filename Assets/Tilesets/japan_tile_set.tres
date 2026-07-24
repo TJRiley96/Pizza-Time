@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" format=3 uid="uid://cvuxmpswqve0j"]
 
-[ext_resource type="Texture2D" uid="uid://bvaqc8nblh4if" path="res://Assets/Graphics/japanese_city_tileset.png" id="1_h6swv"]
-[ext_resource type="Texture2D" uid="uid://dmt31evy4jmvu" path="res://Assets/Graphics/osaka_tileset.png" id="2_h6swv"]
-[ext_resource type="Texture2D" uid="uid://ig3w81cf8get" path="res://Assets/Graphics/dotonbori_tileset.png" id="3_t1hs2"]
-[ext_resource type="Texture2D" uid="uid://cs8w0ivwal714" path="res://Assets/Graphics/urban_accessories_tileset.png" id="4_jpahv"]
-[ext_resource type="Texture2D" uid="uid://cgymgw1cbp8rd" path="res://Assets/Graphics/overgrown_street_tileset.png" id="5_jpahv"]
+[ext_resource type="Texture2D" uid="uid://bvaqc8nblh4if" path="res://Assets/Graphics/Tiles/japanese_city_tileset.png" id="1_jpahv"]
+[ext_resource type="Texture2D" uid="uid://dmt31evy4jmvu" path="res://Assets/Graphics/Tiles/osaka_tileset.png" id="2_7ly5c"]
+[ext_resource type="Texture2D" uid="uid://ig3w81cf8get" path="res://Assets/Graphics/Tiles/dotonbori_tileset.png" id="3_xlluw"]
+[ext_resource type="Texture2D" uid="uid://cs8w0ivwal714" path="res://Assets/Graphics/Tiles/urban_accessories_tileset.png" id="4_uk4li"]
+[ext_resource type="Texture2D" uid="uid://cgymgw1cbp8rd" path="res://Assets/Graphics/Tiles/overgrown_street_tileset.png" id="5_yyn7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mhv4"]
-texture = ExtResource("1_h6swv")
+texture = ExtResource("1_jpahv")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -1070,7 +1070,7 @@ texture_region_size = Vector2i(32, 32)
 49:23/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txbco"]
-texture = ExtResource("2_h6swv")
+texture = ExtResource("2_7ly5c")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 4:0/0 = 0
@@ -1695,7 +1695,7 @@ texture_region_size = Vector2i(32, 32)
 20:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ly5c"]
-texture = ExtResource("3_t1hs2")
+texture = ExtResource("3_xlluw")
 texture_region_size = Vector2i(32, 32)
 5:0/0 = 0
 6:0/0 = 0
@@ -2901,7 +2901,7 @@ texture_region_size = Vector2i(32, 32)
 89:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlluw"]
-texture = ExtResource("4_jpahv")
+texture = ExtResource("4_uk4li")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -3059,7 +3059,7 @@ texture_region_size = Vector2i(32, 32)
 7:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uk4li"]
-texture = ExtResource("5_jpahv")
+texture = ExtResource("5_yyn7l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
