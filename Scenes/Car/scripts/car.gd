@@ -62,5 +62,8 @@ func calculate_steering(delta: float) -> void:
 
 func set_animation() -> void:
 	if velocity:
-		animation_tree.set("parameters/Driving/blend_position", velocity.normalized())
-		print(velocity.normalized())
+		var anim_direction = velocity.normalized()
+		if Input.is_action_pressed("throttle_backwards"):
+			anim_direction = -(anim_direction)
+		animation_tree.set("parameters/Driving/blend_position", anim_direction)
+		#print(velocity.normalized())

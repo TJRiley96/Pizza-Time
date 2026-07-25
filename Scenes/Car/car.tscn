@@ -382,6 +382,7 @@ transitions = ["Start", "Driving", SubResource("AnimationNodeStateMachineTransit
 graph_offset = Vector2(110, 18)
 
 [node name="Car" type="CharacterBody2D" unique_id=1873229434]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_y6gko")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364256406]
