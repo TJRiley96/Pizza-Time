@@ -12,6 +12,9 @@ var throttle: float
 
 var direction: float
 
+@onready var animation_tree: AnimationTree = $AnimationTree
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
@@ -30,12 +33,13 @@ func _physics_process(delta: float) -> void:
 	if throttle:
 		rotation += steer_direction * steering_angle * delta
 		velocity = throttle * SPEED * transform.x	
-			
+		$Sprite2D.rotation = -rotation	
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	#if steer_direction:
 			#calculate_steering(delta)
+	set_animation()
 	move_and_slide()
 
 func get_input() -> void:
@@ -55,3 +59,8 @@ func calculate_steering(delta: float) -> void:
 	var new_direction = (front_wheels - rear_wheels).normalized()
 	velocity = new_direction * velocity.length()
 	rotation = new_direction.angle()
+
+func set_animation() -> void:
+	if velocity:
+		animation_tree.set("parameters/Driving/blend_position", velocity.normalized())
+		print(velocity.normalized())

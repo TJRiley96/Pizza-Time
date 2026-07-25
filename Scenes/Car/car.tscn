@@ -1,32 +1,397 @@
 [gd_scene format=3 uid="uid://dtg4tsioxi8yf"]
 
-[ext_resource type="Texture2D" uid="uid://dpd3uttm4trry" path="res://Assets/Prototype/PNG/Cars/car_red_small_4.png" id="1_e7e8e"]
 [ext_resource type="Script" uid="uid://05wu3xbi45bq" path="res://Scenes/Car/scripts/car.gd" id="1_y6gko"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e7e8e"]
+load_path = "res://.godot/imported/PixelWheels_Porsche_Red.png-4cf7d6e4e7841c9973007a258e967d38.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh3d0"]
 radius = 20.0
 height = 66.0
 
+[sub_resource type="Animation" id="Animation_ts3sh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_afscr"]
+resource_name = "east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
 [sub_resource type="Animation" id="Animation_y6gko"]
 resource_name = "new_animation"
 
+[sub_resource type="Animation" id="Animation_nkh8f"]
+resource_name = "north"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_imavk"]
+resource_name = "north_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_s58m0"]
+resource_name = "north_east_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_hax4g"]
+resource_name = "north_north_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_e7e8e"]
+resource_name = "north_north_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [60, 61, 62, 63]
+}
+
+[sub_resource type="Animation" id="Animation_1h0k1"]
+resource_name = "north_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59]
+}
+
+[sub_resource type="Animation" id="Animation_uiu2h"]
+resource_name = "north_west_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [52, 53, 54, 55]
+}
+
+[sub_resource type="Animation" id="Animation_dufly"]
+resource_name = "south"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_bqxbi"]
+resource_name = "south_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_ojl62"]
+resource_name = "south_east_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_nk6bu"]
+resource_name = "south_south_east"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_gcgl0"]
+resource_name = "south_south_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_xn7fl"]
+resource_name = "south_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 42, 43]
+}
+
+[sub_resource type="Animation" id="Animation_lorwl"]
+resource_name = "south_west_west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [44, 45, 46, 47]
+}
+
+[sub_resource type="Animation" id="Animation_jfmnp"]
+resource_name = "west"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ts3sh"]
 _data = {
-&"new_animation": SubResource("Animation_y6gko")
+&"RESET": SubResource("Animation_ts3sh"),
+&"east": SubResource("Animation_afscr"),
+&"new_animation": SubResource("Animation_y6gko"),
+&"north": SubResource("Animation_nkh8f"),
+&"north_east": SubResource("Animation_imavk"),
+&"north_east_east": SubResource("Animation_s58m0"),
+&"north_north_east": SubResource("Animation_hax4g"),
+&"north_north_west": SubResource("Animation_e7e8e"),
+&"north_west": SubResource("Animation_1h0k1"),
+&"north_west_west": SubResource("Animation_uiu2h"),
+&"south": SubResource("Animation_dufly"),
+&"south_east": SubResource("Animation_bqxbi"),
+&"south_east_east": SubResource("Animation_ojl62"),
+&"south_south_east": SubResource("Animation_nk6bu"),
+&"south_south_west": SubResource("Animation_gcgl0"),
+&"south_west": SubResource("Animation_xn7fl"),
+&"south_west_west": SubResource("Animation_lorwl"),
+&"west": SubResource("Animation_jfmnp")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_awqlb"]
+animation = &"west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4rpv"]
+animation = &"south_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0rn4e"]
+animation = &"south"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5pnk2"]
+animation = &"north"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uit5x"]
+animation = &"east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0w0y4"]
+animation = &"north_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1ynif"]
+animation = &"south_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uciyw"]
+animation = &"north_west"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5elqj"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_awqlb")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_0/name = &"west"
+blend_point_1/node = SubResource("AnimationNodeAnimation_m4rpv")
+blend_point_1/pos = Vector2(-1, 1)
+blend_point_1/name = &"south_west"
+blend_point_2/node = SubResource("AnimationNodeAnimation_0rn4e")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_2/name = &"south"
+blend_point_3/node = SubResource("AnimationNodeAnimation_5pnk2")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"north"
+blend_point_4/node = SubResource("AnimationNodeAnimation_uit5x")
+blend_point_4/pos = Vector2(1, 0)
+blend_point_4/name = &"east"
+blend_point_5/node = SubResource("AnimationNodeAnimation_0w0y4")
+blend_point_5/pos = Vector2(1, -1)
+blend_point_5/name = &"north_east 2"
+blend_point_6/node = SubResource("AnimationNodeAnimation_1ynif")
+blend_point_6/pos = Vector2(1, 1)
+blend_point_6/name = &"south_east"
+blend_point_7/node = SubResource("AnimationNodeAnimation_uciyw")
+blend_point_7/pos = Vector2(-1, -1)
+blend_point_7/name = &"north_west"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ocsg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1h0k1"]
+states/Driving/node = SubResource("AnimationNodeBlendSpace2D_5elqj")
+states/Driving/position = Vector2(346, 100)
+transitions = ["Start", "Driving", SubResource("AnimationNodeStateMachineTransition_7ocsg")]
+graph_offset = Vector2(110, 18)
 
 [node name="Car" type="CharacterBody2D" unique_id=1873229434]
 script = ExtResource("1_y6gko")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364256406]
-rotation = 1.5707964
-texture = ExtResource("1_e7e8e")
+texture = SubResource("CompressedTexture2D_e7e8e")
+hframes = 4
+vframes = 16
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448007129]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_sh3d0")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1574951047]
+visible = false
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sh3d0")
 
@@ -36,4 +401,6 @@ shape = SubResource("CapsuleShape2D_sh3d0")
 libraries/ = SubResource("AnimationLibrary_ts3sh")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=547287531]
+tree_root = SubResource("AnimationNodeStateMachine_1h0k1")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Driving/blend_position = Vector2(-0.10789472, -0.0029851198)

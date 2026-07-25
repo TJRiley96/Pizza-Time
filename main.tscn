@@ -19,7 +19,7 @@ z_index = -1
 y_sort_enabled = true
 
 [node name="Car" parent="Systems/World/Level" unique_id=1873229434 instance=ExtResource("2_h2yge")]
-position = Vector2(248, 201)
+position = Vector2(-80, -353)
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=346139058]
 
