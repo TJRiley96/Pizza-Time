@@ -11,8 +11,14 @@ tile_set = ExtResource("2_dilhk")
 [node name="RoadLayer" parent="." index="1" unique_id=977795131]
 tile_set = ExtResource("2_dilhk")
 
-[node name="BuildingLayer" parent="." index="2" unique_id=621704939]
+[node name="SidewalkLayer" parent="." index="3" unique_id=1380342031]
 tile_set = ExtResource("2_dilhk")
 
-[node name="MiscLayer" parent="." index="3" unique_id=386655072]
+[node name="BottomBuildingLayer" parent="." index="4" unique_id=444366417]
+tile_set = ExtResource("2_dilhk")
+
+[node name="TopBuildingLayer" parent="." index="5" unique_id=621704939]
+tile_set = ExtResource("2_dilhk")
+
+[node name="MiscLayer" parent="." index="6" unique_id=386655072]
 tile_set = ExtResource("2_dilhk")
