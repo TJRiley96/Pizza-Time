@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bwbqh0cg0dyr8" path="res://Levels/level.tscn" id="1_kfiii"]
 [ext_resource type="TileSet" uid="uid://cvuxmpswqve0j" path="res://Assets/Tilesets/japan_tile_set.tres" id="2_de2tq"]
+[ext_resource type="PackedScene" uid="uid://dl07hftbali6o" path="res://Levels/dropoff.tscn" id="3_y138k"]
+[ext_resource type="PackedScene" uid="uid://bc7fyk3kan4at" path="res://Levels/pickup_marker.tscn" id="4_0eufj"]
 
 [node name="PrototypeLevel" unique_id=1381265801 instance=ExtResource("1_kfiii")]
 
@@ -32,3 +34,12 @@ tile_set = ExtResource("2_de2tq")
 [node name="MiscLayer" parent="." index="6" unique_id=386655072]
 tile_map_data = PackedByteArray("AAASAP3/BQAGAAQAAAAOAPz/BQAAAAEAAAAHAPz/BQADAAIAAADx//n/BQABAAAAAADt//3/BQAHAAYAAADt//7/BQAHAAcAAADs//3/BQAFAAIAAADs//7/BQAFAAMAAAD///3/BQAFAAIAAAD///7/BQAFAAMAAAADAP3/BQAFAAIAAAADAP7/BQAFAAMAAAADAAEABQAFAAIAAAADAAIABQAFAAMAAAD//wEABQAFAAIAAAD//wIABQAFAAMAAAA=")
 tile_set = ExtResource("2_de2tq")
+
+[node name="Dropoffs" type="Node2D" parent="." index="7" unique_id=2140177766]
+
+[node name="Dropoff" parent="Dropoffs" index="0" unique_id=786778921 instance=ExtResource("3_y138k")]
+position = Vector2(307, -29)
+
+[node name="PickupMarker" parent="." index="8" unique_id=691904083 instance=ExtResource("4_0eufj")]
+z_index = 1
+position = Vector2(-395, -22)

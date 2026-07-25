@@ -327,6 +327,24 @@ animation = &"west"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4rpv"]
 animation = &"south_west"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7e8e"]
+animation = &"north_west_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y6gko"]
+animation = &"south_west_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ts3sh"]
+animation = &"south_south_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_afscr"]
+animation = &"south_east_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nkh8f"]
+animation = &"north_east_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imavk"]
+animation = &"north_north_east"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0rn4e"]
 animation = &"south"
 
@@ -345,7 +363,14 @@ animation = &"south_east"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uciyw"]
 animation = &"north_west"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s58m0"]
+animation = &"south_south_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hax4g"]
+animation = &"north_north_west"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5elqj"]
+snap = Vector2(0.25, 0.25)
 blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_awqlb")
 blend_point_0/pos = Vector2(-1, 0)
@@ -371,6 +396,30 @@ blend_point_6/name = &"south_east"
 blend_point_7/node = SubResource("AnimationNodeAnimation_uciyw")
 blend_point_7/pos = Vector2(-1, -1)
 blend_point_7/name = &"north_west"
+blend_point_8/node = SubResource("AnimationNodeAnimation_s58m0")
+blend_point_8/pos = Vector2(-0.5, 1)
+blend_point_8/name = &"south_south_west"
+blend_point_9/node = SubResource("AnimationNodeAnimation_hax4g")
+blend_point_9/pos = Vector2(-0.5, -1)
+blend_point_9/name = &"north_north_west"
+blend_point_10/node = SubResource("AnimationNodeAnimation_e7e8e")
+blend_point_10/pos = Vector2(-1, -0.5)
+blend_point_10/name = &"north_west_west"
+blend_point_11/node = SubResource("AnimationNodeAnimation_y6gko")
+blend_point_11/pos = Vector2(-1, 0.5)
+blend_point_11/name = &"north_west_west 2"
+blend_point_12/node = SubResource("AnimationNodeAnimation_ts3sh")
+blend_point_12/pos = Vector2(0.5, 1)
+blend_point_12/name = &"south_south_east"
+blend_point_13/node = SubResource("AnimationNodeAnimation_afscr")
+blend_point_13/pos = Vector2(1, 0.5)
+blend_point_13/name = &"south_east_east"
+blend_point_14/node = SubResource("AnimationNodeAnimation_nkh8f")
+blend_point_14/pos = Vector2(1, -0.5)
+blend_point_14/name = &"north_east_east"
+blend_point_15/node = SubResource("AnimationNodeAnimation_imavk")
+blend_point_15/pos = Vector2(0.5, -1)
+blend_point_15/name = &"north_north_east"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ocsg"]
 advance_mode = 2
@@ -404,4 +453,4 @@ libraries/ = SubResource("AnimationLibrary_ts3sh")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=547287531]
 tree_root = SubResource("AnimationNodeStateMachine_1h0k1")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Driving/blend_position = Vector2(-0.10789472, -0.0029851198)
+parameters/Driving/blend_position = Vector2(0.0969131, 0.6)

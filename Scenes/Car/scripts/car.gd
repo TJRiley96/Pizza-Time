@@ -67,3 +67,8 @@ func set_animation() -> void:
 			anim_direction = -(anim_direction)
 		animation_tree.set("parameters/Driving/blend_position", anim_direction)
 		#print(velocity.normalized())
+
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
