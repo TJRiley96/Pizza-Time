@@ -41,6 +41,9 @@ var throttle: float
 
 var anim_heading: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	bao_amount = 3
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():

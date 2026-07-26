@@ -4,7 +4,7 @@
 
 [node name="Level" type="Node2D" unique_id=1381265801]
 script = ExtResource("1_s41d2")
-time = 90
+time = 20
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=650909499]
 z_index = -3

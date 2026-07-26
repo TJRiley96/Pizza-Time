@@ -108,5 +108,38 @@ position = Vector2(-962, -1121)
 [node name="Dropoff20" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="19" unique_id=249887822 instance=ExtResource("3_y138k")]
 position = Vector2(-1523, -1094)
 
+[node name="Dropoff21" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="20" unique_id=988350624 instance=ExtResource("3_y138k")]
+position = Vector2(-1527, -413)
+
+[node name="Dropoff22" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="21" unique_id=686526194 instance=ExtResource("3_y138k")]
+position = Vector2(-951, -405)
+
+[node name="Dropoff23" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="22" unique_id=1988271311 instance=ExtResource("3_y138k")]
+position = Vector2(-913, -121)
+
+[node name="Dropoff24" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="23" unique_id=1067284444 instance=ExtResource("3_y138k")]
+position = Vector2(-1318, -100)
+
+[node name="Dropoff25" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="24" unique_id=286392640 instance=ExtResource("3_y138k")]
+position = Vector2(-1318, 288)
+
+[node name="Dropoff26" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="25" unique_id=1656743085 instance=ExtResource("3_y138k")]
+position = Vector2(-1150, 1222)
+
+[node name="Dropoff27" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="26" unique_id=1286093489 instance=ExtResource("3_y138k")]
+position = Vector2(-681, 1248)
+
+[node name="Dropoff28" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="27" unique_id=1072210019 instance=ExtResource("3_y138k")]
+position = Vector2(-191, 1219)
+
+[node name="Dropoff29" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="28" unique_id=1129960194 instance=ExtResource("3_y138k")]
+position = Vector2(-692, 1548)
+
+[node name="Dropoff30" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="29" unique_id=1610338847 instance=ExtResource("3_y138k")]
+position = Vector2(945, -673)
+
+[node name="Dropoff31" parent="DropoffSpots" parent_id_path=PackedInt32Array(1492161119) index="30" unique_id=1966745443 instance=ExtResource("3_y138k")]
+position = Vector2(2263, -1342)
+
 [node name="SpawnMarker" parent="." index="9" unique_id=512283132]
 position = Vector2(234, 346)

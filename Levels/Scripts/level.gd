@@ -35,6 +35,8 @@ func _ready() -> void:
 		
 	Data.time_left = time
 	Global.audio_manager.switch_song()
+	Data.points = 0
+	Data.bao_amount = 3
 
 func init_game() -> void:
 	car = get_tree().get_first_node_in_group("Player")
