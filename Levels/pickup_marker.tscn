@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xnw3lo75uyux" path="res://Assets/Graphics/Sprites/pickup.png" id="1_ca4rc"]
 [ext_resource type="Script" uid="uid://bj7ccvq56tmt1" path="res://Levels/pickup_marker.gd" id="1_y1gi4"]
 [ext_resource type="Texture2D" uid="uid://cqy8f7lvokflc" path="res://Assets/Graphics/Sprites/pickup_base.png" id="2_y1gi4"]
+[ext_resource type="AudioStream" uid="uid://drbcoopgbopq5" path="res://Assets/Audio/SFX_18.mp3" id="4_u6cqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u6cqb"]
 radius = 32.0
@@ -94,4 +95,11 @@ frame_progress = 0.12924701
 z_index = -2
 texture = ExtResource("2_y1gi4")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1571115959]
+stream = ExtResource("4_u6cqb")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=1489931506]
+wait_time = 10.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="CoolDownTimer" to="." method="_on_cool_down_timer_timeout"]

@@ -1,6 +1,10 @@
 extends Marker2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite/AnimatedSprite2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var cool_down_timer: Timer = $CoolDownTimer
+
+var is_active: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +17,15 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
 	if body is Car:
-		body.bao_amount = 3
+		if body.bao_amount !=3:
+			body.bao_amount = 3
+			audio_stream_player.play()
+			is_active = false
+			hide()
+			cool_down_timer.start()
+
+
+func _on_cool_down_timer_timeout() -> void:
+	show()
+	is_active = true

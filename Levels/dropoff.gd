@@ -1,6 +1,7 @@
 extends Marker2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite/AnimatedSprite2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_active: bool = false
 
@@ -32,3 +33,4 @@ func _on_area_2d_body_entered(body: Car) -> void:
 				update()
 				Data.points += 1
 				Data.time_left += 10
+				audio_stream_player.play()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://40r1x5f0aojb" path="res://Levels/dropoff.gd" id="1_c6q8s"]
 [ext_resource type="Texture2D" uid="uid://bswkr2c636u2x" path="res://Assets/Graphics/Sprites/dropoff.png" id="2_2l5cs"]
 [ext_resource type="Texture2D" uid="uid://dhhnj3xcjomr1" path="res://Assets/Graphics/Sprites/dropoff_base.png" id="3_315jm"]
+[ext_resource type="AudioStream" uid="uid://d1squuovn4a8o" path="res://Assets/Audio/SFX_21.mp3" id="4_2l5cs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh3d0"]
 radius = 32.0
@@ -95,5 +96,8 @@ frame_progress = 0.41503632
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=120866622]
 z_index = -2
 texture = ExtResource("3_315jm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1154259959]
+stream = ExtResource("4_2l5cs")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

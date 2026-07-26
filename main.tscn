@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dv0ipqyhwkq3l"]
 
 [ext_resource type="Script" uid="uid://bnqvhh2xhigta" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://tp5jirsv8dy" path="res://menu_bg.tscn" id="2_5vw27"]
 [ext_resource type="Texture2D" uid="uid://clmenbx57wjj7" path="res://Assets/Graphics/Icons/Food 32.png" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dbfsuwrhxew3e" path="res://Assets/Graphics/Icons/Objects 97.png" id="3_272bh"]
 [ext_resource type="Script" uid="uid://b3biq1w0k1f0m" path="res://hud.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bkbg4p07ifk2e" path="res://Scenes/UI/pause_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dy03evrn7dsa4" path="res://Scenes/UI/main_menu.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://boqtngyf1ce5u" path="res://Scenes/UI/game_over.gd" id="5_lquwl"]
+[ext_resource type="FontFile" uid="uid://cksyqki36nhv7" path="res://Assets/Fonts/Oi/Oi-Regular.ttf" id="9_kek77"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh3d0"]
 bg_color = Color(0.60784316, 0.52156866, 0.9372549, 1)
@@ -80,6 +82,7 @@ grow_vertical = 2
 script = ExtResource("4_1bvp3")
 
 [node name="PointsLabel" type="Label" parent="HudLayer/Hud" unique_id=539733825]
+modulate = Color(1, 1, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -87,6 +90,7 @@ anchor_right = 1.0
 offset_top = 10.0
 offset_right = -10.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("9_kek77")
 theme_override_font_sizes/font_size = 32
 text = "Points: 0"
 
@@ -107,6 +111,7 @@ texture = ExtResource("3_272bh")
 
 [node name="TimeLabel" type="Label" parent="HudLayer/Hud/HBoxContainer" unique_id=859424685]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("9_kek77")
 theme_override_font_sizes/font_size = 64
 text = "00 : 00"
 
@@ -203,6 +208,7 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("9_kek77")
 theme_override_font_sizes/font_size = 32
 text = "Main Menu"
 
@@ -215,7 +221,8 @@ theme_override_constants/separation = 2
 [node name="PlayButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=462374660]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -224,7 +231,8 @@ text = "Play"
 [node name="QuitButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1102026839]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -275,7 +283,8 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 text = "Pause"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/PauseMenu/Panel/MarginContainer" unique_id=52826845]
@@ -287,7 +296,8 @@ theme_override_constants/separation = 2
 [node name="MainMenuButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=1745477151]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -296,7 +306,8 @@ text = "Main Menu"
 [node name="QuitButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=792019927]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -346,19 +357,21 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("9_kek77")
 theme_override_font_sizes/font_size = 32
 text = "Game Over"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOverLayer/GameOver/Panel/MarginContainer" unique_id=393933345]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 12
 theme_override_constants/separation = 2
 
 [node name="PlayAgainButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1261422928]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -367,7 +380,8 @@ text = "Play Again"
 [node name="MainMenuButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1939661164]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
@@ -376,14 +390,40 @@ text = "Main Menu"
 [node name="QuitButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1195181732]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
 text = "Quit"
 
-[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1057843704]
+[node name="SplashLayer" type="CanvasLayer" parent="." unique_id=1057843704]
 process_mode = 3
+layer = -2
+
+[node name="MenuBG" parent="SplashLayer" unique_id=1418130078 instance=ExtResource("2_5vw27")]
+z_index = -20
+
+[node name="Control" type="Control" parent="SplashLayer" unique_id=1227609701]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="SplashLayer/Control" unique_id=1668064564]
+self_modulate = Color(0.91157126, 0.06757933, 5.7756904e-07, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 75.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_kek77")
+theme_override_font_sizes/font_size = 50
+text = "Dumpling Delivery"
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1841271509]
 process_mode = 3

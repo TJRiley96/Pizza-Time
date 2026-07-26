@@ -91,11 +91,17 @@ func _on_compass_check_timer_timeout() -> void:
 	if not car.closest_pickup_point:
 		if pickup_points:
 			car.closest_pickup_point = pickup_points[0]
+			
+	if not car.closest_pickup_point.is_active:
+		for point in pickup_points:
+			if point.is_active:
+				car.closest_pickup_point = point
+				break
+				
 	for point in pickup_points:
-		if car.position.distance_to(point.position) < car.position.distance_to(car.closest_pickup_point.position):
+		if car.position.distance_to(point.position) < car.position.distance_to(car.closest_pickup_point.position) and point.is_active:
 			car.closest_pickup_point = point
 
 
 func _on_game_timer_timeout() -> void:
-	print(Data.time_left)
 	Data.time_left -= 1

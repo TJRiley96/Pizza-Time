@@ -10,6 +10,7 @@ var audio_manager_scene: PackedScene = preload("res://audio_manager.tscn")
 @onready var main_menu_layer: CanvasLayer = $MainMenuLayer
 @onready var pause_layer: CanvasLayer = $PauseLayer
 @onready var game_over_layer: CanvasLayer = $GameOverLayer
+@onready var splash_layer: CanvasLayer = $SplashLayer
 
 var player_scene: PackedScene = preload("res://Scenes/Car/car.tscn")
 
@@ -65,6 +66,7 @@ func start_game() -> void:
 	hud_layer.show()
 	game_over_layer.hide()
 	main_menu_layer.hide()
+	splash_layer.hide()
 	unpause()
 
 func end_game() -> void:
@@ -75,6 +77,7 @@ func end_game() -> void:
 	pause_layer.hide()
 	game_over_layer.hide()
 	get_tree().paused = true
+	splash_layer.show()
 
 	
 
