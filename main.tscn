@@ -155,7 +155,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "Game Over"
+text = "Main Menu"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenuLayer/MainMenu/Panel/MarginContainer" unique_id=1016417930]
 layout_mode = 2
@@ -164,14 +164,16 @@ size_flags_vertical = 4
 theme_override_constants/separation = 2
 
 [node name="PlayButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=462374660]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
-text = "Play Again"
+text = "Play"
 
 [node name="QuitButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1102026839]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -225,7 +227,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "Game Over"
+text = "Pause"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/PauseMenu/Panel/MarginContainer" unique_id=52826845]
 layout_mode = 2
@@ -234,6 +236,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 2
 
 [node name="MainMenuButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=1745477151]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -242,6 +245,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
 text = "Main Menu"
 
 [node name="QuitButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=792019927]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -251,7 +255,6 @@ text = "Quit"
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=294842125]
 process_mode = 3
-visible = false
 
 [node name="GameOver" type="Control" parent="GameOverLayer" unique_id=586917175]
 layout_mode = 3
@@ -304,6 +307,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 2
 
 [node name="PlayAgainButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1261422928]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -312,6 +316,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
 text = "Play Again"
 
 [node name="MainMenuButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1939661164]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -320,6 +325,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
 text = "Main Menu"
 
 [node name="QuitButton" type="Button" parent="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer" unique_id=1195181732]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -335,7 +341,11 @@ process_mode = 3
 
 [connection signal="pressed" from="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer/PlayButton" to="MainMenuLayer/MainMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer/QuitButton" to="MainMenuLayer/MainMenu" method="_on_quit_button_pressed"]
-[connection signal="main_menu" from="PauseLayer/PauseMenu" to="." method="_on_pause_menu_main_menu"]
+[connection signal="main_menu" from="PauseLayer/PauseMenu" to="." method="_main_menu"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer/MainMenuButton" to="PauseLayer/PauseMenu" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer/QuitButton" to="PauseLayer/PauseMenu" method="_on_quit_button_pressed"]
+[connection signal="main_menu" from="GameOverLayer/GameOver" to="." method="_main_menu"]
+[connection signal="play_game" from="GameOverLayer/GameOver" to="." method="start_game"]
+[connection signal="pressed" from="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer/PlayAgainButton" to="GameOverLayer/GameOver" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer/MainMenuButton" to="GameOverLayer/GameOver" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer/QuitButton" to="GameOverLayer/GameOver" method="_on_quit_button_pressed"]

@@ -12,6 +12,8 @@ var dropoff_points: Array = []
 
 @export var time: int = 120
 
+signal game_over
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	car = get_tree().get_first_node_in_group("Player")
@@ -59,10 +61,11 @@ func _process(delta: float) -> void:
 	if not car.current_dropoff:
 		find_new_dropoff()
 		
-	if Data.time_left < 0:
+	if Data.time_left > 0:
 		update_timer_hud()
 	else:
 		Data.game_over = true
+		game_over.emit()
 
 func find_new_dropoff() -> void:
 	if dropoff_points:

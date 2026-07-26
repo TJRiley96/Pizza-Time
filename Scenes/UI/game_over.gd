@@ -1,5 +1,7 @@
 extends Control
 
+signal play_game
+signal main_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,3 +15,11 @@ func _process(delta: float) -> void:
 
 func _on_quit_button_pressed() -> void:
 	Global.quit_game()
+
+
+func _on_play_again_button_pressed() -> void:
+	play_game.emit()
+
+
+func _on_main_menu_button_pressed() -> void:
+	main_menu.emit()
