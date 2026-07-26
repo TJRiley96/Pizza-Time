@@ -65,7 +65,6 @@ script = ExtResource("1_h2yge")
 
 [node name="World" type="Node2D" parent="." unique_id=1577481153]
 process_mode = 1
-position = Vector2(0, -1)
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=346139058]
 
