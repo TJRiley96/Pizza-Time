@@ -455,7 +455,7 @@ libraries/ = SubResource("AnimationLibrary_ts3sh")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=547287531]
 tree_root = SubResource("AnimationNodeStateMachine_1h0k1")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Driving/blend_position = Vector2(0.0969131, 0.6)
+parameters/Driving/blend_position = Vector2(0.53846157, -0.03880596)
 
 [node name="PickupCompass" type="Sprite2D" parent="." unique_id=63972070]
 modulate = Color(1, 0.36171573, 0.2470648, 1)
