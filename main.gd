@@ -4,6 +4,7 @@ extends Node
 var game_manager_scene: PackedScene = preload("res://game_manager.tscn")
 var audio_manager_scene: PackedScene = preload("res://audio_manager.tscn")
 
+@onready var systems: Node = $Systems
 @onready var world: Node2D = $World
 @onready var hud_layer: CanvasLayer = $HudLayer
 @onready var main_menu_layer: CanvasLayer = $MainMenuLayer
@@ -19,7 +20,8 @@ func _ready() -> void:
 	Data.game_over = false
 	
 	get_tree().get_first_node_in_group("MainMenu").connect("play_game", start_game)
-	
+	systems.add_child(audio_manager_scene.instantiate())
+	Global.audio_manager.play_music()
 	end_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,6 +75,7 @@ func end_game() -> void:
 	pause_layer.hide()
 	game_over_layer.hide()
 	get_tree().paused = true
+
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -86,6 +89,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 
 func _main_menu() -> void:
+	Global.audio_manager.switch_song()
 	end_game()
 
 

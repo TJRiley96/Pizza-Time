@@ -34,6 +34,7 @@ func _ready() -> void:
 		find_new_dropoff()
 		
 	Data.time_left = time
+	Global.audio_manager.switch_song()
 
 func init_game() -> void:
 	car = get_tree().get_first_node_in_group("Player")

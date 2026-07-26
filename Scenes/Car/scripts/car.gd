@@ -11,12 +11,6 @@ var bao_amount: int = 3:
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@export var wheel_base: float = 70
-@export var steering_angle: float = 15
-
-var steer_direction: float
-var throttle: float
-
 var direction: float
 
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -29,6 +23,24 @@ var current_dropoff: Marker2D
 
 signal pause_menu
 
+# Car controls
+@export var wheel_base: float = 70
+@export var steering_angle: float = 15
+@export var engine_power: int = 150
+@export var friction: float = -55
+@export var drag: float = -0.06
+@export var braking: int = -450
+@export var max_speed_reverse: int = 250
+@export var slip_speed: int = 600
+@export var traction_fast: float = 2.5
+@export var traction_slow: float = 10
+
+var steer_direction: float
+var acceleration: Vector2 = Vector2.ZERO
+var throttle: float
+
+var anim_heading: Vector2 = Vector2.ZERO
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
@@ -40,12 +52,27 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	acceleration = Vector2.ZERO
 	get_input()
+	
+	calculate_steering(delta)
+	velocity += acceleration * delta
+	apply_friction(delta)
+	
 	point_pickup_compass()
 	point_dropoff_compass()
 	
+	
+	
 	#
 	#print(global_position, velocity)
+	
+	#if steer_direction:
+			#calculate_steering(delta)
+	set_animation()
+	move_and_slide()
+
+func tank_control(delta: float) -> void:
 	if throttle:
 		rotation += steer_direction * steering_angle * delta
 		velocity = throttle * SPEED * transform.x	
@@ -53,34 +80,74 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	#if steer_direction:
-			#calculate_steering(delta)
-	set_animation()
-	move_and_slide()
 
 func get_input() -> void:
 	
+	var turn = Input.get_axis("steer_left","steer_right")
+	steer_direction = turn * deg_to_rad(steering_angle)
+	
+	if Input.is_action_pressed("throttle_forward"):
+		acceleration = transform.x * engine_power
+		
+	if Input.is_action_pressed("brake") or Input.is_action_pressed("throttle_backwards"):
+		acceleration = transform.x * braking
+		
+	
+	
+	#print("Steering direction: ",steer_direction, " Throttle: ",throttle)
+	
+func get_tank_input() -> void:
 	steer_direction = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steering_angle)
 	
 	throttle = Input.get_axis("throttle_backwards", "throttle_forward")
-	#print("Steering direction: ",steer_direction, " Throttle: ",throttle)
 	
+func apply_friction(delta: float) -> void:
 	
+	# If there is no input and speed is very low, just stop to prevent endless sliding
+	if acceleration == Vector2.ZERO and velocity.length() < 50:
+		velocity = Vector2.ZERO
+	# Calculate friction force and air drag based on current velocity, and apply it
+	var friction_force = velocity * friction * delta
+	var drag_force = velocity * velocity.length() * drag * delta
+	# Add the forces to the acceleration
+	acceleration += drag_force + friction_force
+
 func calculate_steering(delta: float) -> void:
-	var rear_wheels =  position - transform.x * wheel_base/2.0
-	var front_wheels =  position + transform.x * wheel_base/2.0
-	
-	rear_wheels += velocity * delta
-	front_wheels += velocity.rotated(steer_direction) * delta
-	var new_direction = (front_wheels - rear_wheels).normalized()
-	velocity = new_direction * velocity.length()
-	rotation = new_direction.angle()
+	# Calculate the positions of the rear and front wheel
+	var rear_wheel = position - transform.x * wheel_base / 2.0
+	var front_wheel = position + transform.x * wheel_base / 2.0
+	# Advance the wheels' positions based on the current velocity, applying rotation to the front wheel
+	rear_wheel += velocity * delta
+	front_wheel += velocity.rotated(steer_direction) * delta
+	# Calculate the new heading based on the wheels' positions
+	var new_heading = rear_wheel.direction_to(front_wheel)
+
+	# Choose the traction model based on the current speed
+	var traction = traction_slow
+	if velocity.length() > slip_speed:
+		traction = traction_fast
+
+	# Dot product represents how aligned the new heading is with the current velocity direction
+	var d = new_heading.dot(velocity.normalized())
+
+	# If not braking (d > 0), adjust the car velocity smoothly towards the new heading
+	if d > 0:
+		velocity = lerp(velocity, new_heading * velocity.length(), traction * delta)
+
+	# If braking (d < 0), reverse the direction and limit the speed
+	if d < 0:
+		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
+
+	# Update the car's rotation to face in the direction of the new heading
+	rotation = new_heading.angle()
+	$Sprite2D.rotation = -rotation
+	anim_heading = new_heading
 
 func set_animation() -> void:
 	if velocity:
-		var anim_direction = velocity.normalized()
-		if Input.is_action_pressed("throttle_backwards"):
-			anim_direction = -(anim_direction)
+		var anim_direction = anim_heading.normalized()
+		#if Input.is_action_pressed("throttle_backwards"):
+			#anim_direction = -(anim_direction)
 		animation_tree.set("parameters/Driving/blend_position", anim_direction)
 		#print(velocity.normalized())
 

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://d0m3g512o0vet"]
 
 [ext_resource type="Script" uid="uid://vkxthd48r3f2" path="res://Scenes/audio_manager.gd" id="1_jisk1"]
+[ext_resource type="AudioStream" uid="uid://b0v13ya7nbfap" path="res://Assets/Audio/JDB_Isolation.wav" id="2_bq1v2"]
 
 [node name="AudioManager" type="Node" unique_id=1441771170]
 script = ExtResource("1_jisk1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=444705415]
+stream = ExtResource("2_bq1v2")
+autoplay = true
