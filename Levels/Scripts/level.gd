@@ -39,8 +39,10 @@ func _process(delta: float) -> void:
 	if not car.current_dropoff:
 		find_new_dropoff()
 		
-	if Data.time_left > 0:
+	if Data.time_left < 0:
 		update_timer_hud()
+	else:
+		Data.game_over = true
 
 func find_new_dropoff() -> void:
 	if dropoff_points:

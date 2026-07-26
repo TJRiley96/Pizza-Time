@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://db3alsj472oty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsjbc"]
+bg_color = Color(0.60784316, 0.52156866, 0.9372549, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5400204, 0.42592618, 0.9040526, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu823"]
+bg_color = Color(0.17254902, 0.32941177, 0.007843138, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.072427355, 0.16019863, 0.0020222256, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50775"]
+bg_color = Color(0.17254902, 0.32941177, 0.007843138, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.072427355, 0.16019863, 0.0020222256, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6w6y"]
+bg_color = Color(0.26621652, 0.48801613, 0.016609153, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.16891631, 0.3299831, 0.015189439, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="UITemplate" type="Control" unique_id=1879958164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=908093898]
+custom_minimum_size = Vector2(320, 240)
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsjbc")
+
+[node name="Button" type="Button" parent="." unique_id=2002025388]
+layout_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fu823")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50775")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6w6y")
+text = "Template Button"

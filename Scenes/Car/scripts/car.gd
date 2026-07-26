@@ -27,6 +27,8 @@ var closest_pickup_point: Marker2D
 var old_dropoff: Marker2D
 var current_dropoff: Marker2D
 
+signal pause_menu
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
@@ -82,10 +84,12 @@ func set_animation() -> void:
 		animation_tree.set("parameters/Driving/blend_position", anim_direction)
 		#print(velocity.normalized())
 
-func _unhandled_input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed("exit"):
-		get_tree().quit()
+#func _unhandled_input(event: InputEvent) -> void:
+	#
+	#if event.is_action_pressed("exit"):
+		#if not Global.pause_open and not Global.main_menu_open:
+			#pause_menu.emit()
+			
 
 
 func point_pickup_compass() -> void:
