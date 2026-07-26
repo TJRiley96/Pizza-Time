@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dtg4tsioxi8yf" path="res://Scenes/Car/car.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://b3biq1w0k1f0m" path="res://hud.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bkbg4p07ifk2e" path="res://Scenes/UI/pause_menu.gd" id="5_7mycd"]
-[ext_resource type="Script" uid="uid://dy03evrn7dsa4" path="res://Scenes/UI/main_menu.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://boqtngyf1ce5u" path="res://Scenes/UI/game_over.gd" id="5_lquwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh3d0"]
@@ -45,6 +44,10 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
 bg_color = Color(0.26621652, 0.48801613, 0.016609153, 1)
@@ -67,6 +70,7 @@ script = ExtResource("1_h2yge")
 
 [node name="World" type="Node2D" parent="." unique_id=1577481153]
 process_mode = 1
+visible = false
 position = Vector2(0, -1)
 
 [node name="Car" parent="World" unique_id=1873229434 instance=ExtResource("2_h2yge")]
@@ -75,6 +79,7 @@ position = Vector2(-1390, -1026.0002)
 [node name="PrototypeLevel" parent="World" unique_id=1381265801 instance=ExtResource("1_0xm2m")]
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=346139058]
+visible = false
 
 [node name="Hud" type="Control" parent="HudLayer" unique_id=894516964]
 layout_mode = 3
@@ -119,17 +124,17 @@ text = "00 : 00"
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=441337859]
 process_mode = 2
+visible = false
 
-[node name="MainMenu" type="Control" parent="MainMenuLayer" unique_id=840632780]
+[node name="PauseMenu" type="Control" parent="MainMenuLayer" unique_id=840632780]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_272bh")
 
-[node name="Panel" type="Panel" parent="MainMenuLayer/MainMenu" unique_id=612506179]
+[node name="Panel" type="Panel" parent="MainMenuLayer/PauseMenu" unique_id=612506179]
 custom_minimum_size = Vector2(320, 240)
 layout_mode = 1
 anchors_preset = 8
@@ -145,7 +150,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sh3d0")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenuLayer/MainMenu/Panel" unique_id=1323116655]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuLayer/PauseMenu/Panel" unique_id=1323116655]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,20 +162,20 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Label" type="Label" parent="MainMenuLayer/MainMenu/Panel/MarginContainer" unique_id=346000234]
+[node name="Label" type="Label" parent="MainMenuLayer/PauseMenu/Panel/MarginContainer" unique_id=346000234]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Game Over"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuLayer/MainMenu/Panel/MarginContainer" unique_id=1016417930]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuLayer/PauseMenu/Panel/MarginContainer" unique_id=1016417930]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 2
 
-[node name="PlayButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=462374660]
+[node name="PlayAgainButton" type="Button" parent="MainMenuLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=462374660]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -178,7 +183,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
 text = "Play Again"
 
-[node name="QuitButton" type="Button" parent="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer" unique_id=1102026839]
+[node name="MainMenuButton" type="Button" parent="MainMenuLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=599465894]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="MainMenuLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=1102026839]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
@@ -239,6 +252,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 2
+
+[node name="PlayAgainButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=816416200]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4bob7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
+text = "Play Again"
 
 [node name="MainMenuButton" type="Button" parent="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=1745477151]
 layout_mode = 2
@@ -340,7 +361,4 @@ process_mode = 3
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1841271509]
 process_mode = 3
 
-[connection signal="pressed" from="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer/PlayButton" to="MainMenuLayer/MainMenu" method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainMenuLayer/MainMenu/Panel/MarginContainer/VBoxContainer/QuitButton" to="MainMenuLayer/MainMenu" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="PauseLayer/PauseMenu/Panel/MarginContainer/VBoxContainer/QuitButton" to="PauseLayer/PauseMenu" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="GameOverLayer/GameOver/Panel/MarginContainer/VBoxContainer/QuitButton" to="GameOverLayer/GameOver" method="_on_quit_button_pressed"]

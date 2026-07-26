@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0m3g512o0vet"]
+
+[ext_resource type="Script" uid="uid://vkxthd48r3f2" path="res://Scenes/audio_manager.gd" id="1_jisk1"]
+
+[node name="AudioManager" type="Node" unique_id=1441771170]
+script = ExtResource("1_jisk1")
