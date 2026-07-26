@@ -19,7 +19,8 @@ func _ready() -> void:
 	Data.game_over = false
 	
 	get_tree().get_first_node_in_group("MainMenu").connect("play_game", start_game)
-
+	
+	end_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -44,13 +45,20 @@ func unpause() -> void:
 	pause_layer.hide()
 	get_tree().paused = false
 
+func clear_world() -> void:
+	for child in world.get_children():
+		child.free()
+
 func start_game() -> void:
+	
+	clear_world()
 	var level: Level = prototype_level_scene.instantiate()
 	var player: Car = player_scene.instantiate()
 	
 	world.add_child(player)
 	world.add_child(level)
 	
+	level.connect('game_over', game_over)
 	Global.in_game = true
 	hud_layer.show()
 	game_over_layer.hide()
@@ -59,8 +67,7 @@ func start_game() -> void:
 
 func end_game() -> void:
 	
-	for child in world.get_children():
-		child.free()
+	clear_world()
 	main_menu_layer.show()
 	hud_layer.hide()
 	pause_layer.hide()
@@ -78,5 +85,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			unpause()
 			
 
-func _on_pause_menu_main_menu() -> void:
+func _main_menu() -> void:
 	end_game()
+
+
+func game_over() -> void:
+	get_tree().paused = true
+	game_over_layer.show()
+	pause_layer.hide()
+	main_menu_layer.hide()
+	
+	
