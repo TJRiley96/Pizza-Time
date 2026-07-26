@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtg4tsioxi8yf"]
 
 [ext_resource type="Script" uid="uid://05wu3xbi45bq" path="res://Scenes/Car/scripts/car.gd" id="1_y6gko"]
+[ext_resource type="Texture2D" uid="uid://bhocks1qc0otw" path="res://Assets/Graphics/Sprites/compass.png" id="2_y6gko"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e7e8e"]
 load_path = "res://.godot/imported/PixelWheels_Porsche_Red.png-4cf7d6e4e7841c9973007a258e967d38.ctex"
@@ -430,8 +431,10 @@ states/Driving/position = Vector2(346, 100)
 transitions = ["Start", "Driving", SubResource("AnimationNodeStateMachineTransition_7ocsg")]
 graph_offset = Vector2(110, 18)
 
-[node name="Car" type="CharacterBody2D" unique_id=1873229434]
+[node name="Car" type="CharacterBody2D" unique_id=1873229434 groups=["Player"]]
 scale = Vector2(0.75, 0.75)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_y6gko")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364256406]
@@ -441,7 +444,6 @@ vframes = 16
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448007129]
-visible = false
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_sh3d0")
 
@@ -454,3 +456,14 @@ libraries/ = SubResource("AnimationLibrary_ts3sh")
 tree_root = SubResource("AnimationNodeStateMachine_1h0k1")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Driving/blend_position = Vector2(0.0969131, 0.6)
+
+[node name="PickupCompass" type="Sprite2D" parent="." unique_id=63972070]
+modulate = Color(1, 0.36171573, 0.2470648, 1)
+z_index = 5
+rotation = -1.0611602
+texture = ExtResource("2_y6gko")
+
+[node name="DropoffCompass" type="Sprite2D" parent="." unique_id=236991196]
+modulate = Color(0, 1, 0, 1)
+z_index = 6
+texture = ExtResource("2_y6gko")

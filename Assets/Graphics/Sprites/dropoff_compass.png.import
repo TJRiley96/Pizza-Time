@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bswkr2c636u2x"
-path="res://.godot/imported/dropoff.png-fa9f8324b890dd52bedfb0e3fe776fd3.ctex"
+uid="uid://dlr2s0pupynw5"
+path="res://.godot/imported/dropoff_compass.png-da2841ec62988fea09543c342cb62ad0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/dropoff.png"
-dest_files=["res://.godot/imported/dropoff.png-fa9f8324b890dd52bedfb0e3fe776fd3.ctex"]
+source_file="res://Assets/Graphics/Sprites/dropoff_compass.png"
+dest_files=["res://.godot/imported/dropoff_compass.png-da2841ec62988fea09543c342cb62ad0.ctex"]
 
 [params]
 

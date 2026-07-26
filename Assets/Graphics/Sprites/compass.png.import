@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bswkr2c636u2x"
-path="res://.godot/imported/dropoff.png-a7873c0978fd419153bb111be3010460.ctex"
+uid="uid://bhocks1qc0otw"
+path="res://.godot/imported/compass.png-521148823956e071f1d25d0bf02071f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Sprites/dropoff.png"
-dest_files=["res://.godot/imported/dropoff.png-a7873c0978fd419153bb111be3010460.ctex"]
+source_file="res://Assets/Graphics/Sprites/compass.png"
+dest_files=["res://.godot/imported/compass.png-521148823956e071f1d25d0bf02071f1.ctex"]
 
 [params]
 

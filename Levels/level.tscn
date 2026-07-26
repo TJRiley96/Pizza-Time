@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bwbqh0cg0dyr8"]
 
+[ext_resource type="Script" uid="uid://dtnbwinsk5iuc" path="res://Levels/Scripts/level.gd" id="1_s41d2"]
+
 [node name="Level" type="Node2D" unique_id=1381265801]
+script = ExtResource("1_s41d2")
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=650909499]
 z_index = -3
@@ -20,9 +23,25 @@ z_index = 1
 position = Vector2(1, 0)
 
 [node name="TopBuildingLayer" type="TileMapLayer" parent="." unique_id=621704939]
-z_index = 2
+z_index = 1
 position = Vector2(1, 0)
 
 [node name="MiscLayer" type="TileMapLayer" parent="." unique_id=386655072]
 z_index = 3
 position = Vector2(1, 0)
+
+[node name="PickupSpots" type="Node2D" parent="." unique_id=986337865]
+
+[node name="DropoffSpots" type="Node2D" parent="." unique_id=1492161119]
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=512283132]
+
+[node name="CompassCheckTimer" type="Timer" parent="." unique_id=1713427233]
+wait_time = 2.0
+autostart = true
+
+[node name="GameTimer" type="Timer" parent="." unique_id=702145914]
+autostart = true
+
+[connection signal="timeout" from="CompassCheckTimer" to="." method="_on_compass_check_timer_timeout"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

@@ -1,9 +1,12 @@
-extends CharacterBody2D
+class_name Car extends CharacterBody2D
 
 
 var has_bao: bool = true
 
-var bao_amount: int = 0
+var bao_amount: int = 3:
+	set(value):
+		bao_amount = value
+		Data.bao_amount = value
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -17,7 +20,11 @@ var throttle: float
 var direction: float
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var pickup_compass: Sprite2D = $PickupCompass
+@onready var dropoff_compass: Sprite2D = $DropoffCompass
 
+var closest_pickup_point: Marker2D
+var current_dropoff: Marker2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,6 +38,8 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	get_input()
+	point_pickup_compass()
+	point_dropoff_compass()
 	
 	#
 	#print(global_position, velocity)
@@ -76,3 +85,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
+
+
+func point_pickup_compass() -> void:
+	if closest_pickup_point:
+		pickup_compass.look_at(closest_pickup_point.global_position)
+		pickup_compass.rotation_degrees += 45
+
+func point_dropoff_compass() -> void:
+	if current_dropoff:
+		dropoff_compass.show()
+		dropoff_compass.look_at(current_dropoff.global_position)
+		dropoff_compass.rotation_degrees += 45
+	else:
+		dropoff_compass.hide()
