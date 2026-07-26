@@ -17,6 +17,8 @@ var prototype_level_scene: PackedScene = preload("res://Levels/Prototype/prototy
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Data.game_over = false
+	
+	get_tree().get_first_node_in_group("MainMenu").connect("play_game", start_game)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,6 +57,17 @@ func start_game() -> void:
 	main_menu_layer.hide()
 	unpause()
 
+func end_game() -> void:
+	
+	for child in world.get_children():
+		child.free()
+	main_menu_layer.show()
+	hud_layer.hide()
+	pause_layer.hide()
+	game_over_layer.hide()
+	get_tree().paused = true
+	
+
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("exit"):
@@ -64,6 +77,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			unpause()
 			
-	
-	
-	
+
+func _on_pause_menu_main_menu() -> void:
+	end_game()
