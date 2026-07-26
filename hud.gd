@@ -14,4 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	bao_label.text = "Bao: " + str(Data.bao_amount)
 	points_label.text = "Points: " + str(Data.points)
-	time_label.text = str(floor(Data.time_left/60)) + " : " + str(Data.time_left % 60)
+	time_label.text = "%02d: %02d" % format_time_left()
+
+func format_time_left() -> Array:
+	return [floor(Data.time_left/60), Data.time_left % 60]

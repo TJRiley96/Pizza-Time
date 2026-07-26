@@ -29,10 +29,7 @@ func _ready() -> void:
 			dropoff_points.append(point)
 			
 	if dropoff_points:
-		car.current_dropoff = dropoff_points.pick_random()
-		car.current_dropoff.is_active = true
-		car.current_dropoff.update()
-		print(car.current_dropoff)
+		find_new_dropoff()
 		
 	Data.time_left = time
 		
@@ -48,6 +45,9 @@ func _process(delta: float) -> void:
 func find_new_dropoff() -> void:
 	if dropoff_points:
 		car.current_dropoff = dropoff_points.pick_random()
+		while(car.current_dropoff == car.old_dropoff):
+			car.current_dropoff = dropoff_points.pick_random()
+			print(car.current_dropoff == car.old_dropoff)
 		car.current_dropoff.is_active = true
 		car.current_dropoff.update()
 		print(car.current_dropoff)

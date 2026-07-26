@@ -26,6 +26,7 @@ func _on_area_2d_body_entered(body: Car) -> void:
 		if body is Car:
 			if body.bao_amount > 0:
 				body.bao_amount -= 1
+				body.old_dropoff = body.current_dropoff
 				body.current_dropoff = null
 				is_active = false
 				update()

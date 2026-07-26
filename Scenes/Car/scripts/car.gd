@@ -24,6 +24,7 @@ var direction: float
 @onready var dropoff_compass: Sprite2D = $DropoffCompass
 
 var closest_pickup_point: Marker2D
+var old_dropoff: Marker2D
 var current_dropoff: Marker2D
 
 func _physics_process(delta: float) -> void:
