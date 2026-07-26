@@ -32,7 +32,27 @@ func _ready() -> void:
 		find_new_dropoff()
 		
 	Data.time_left = time
+
+func init_game() -> void:
+	car = get_tree().get_first_node_in_group("Player")
+	car.global_position = spawn_marker.global_position
+	print("Player Placed ", car.global_position, " for spawn point location ", spawn_marker.global_position)
+	for point in pickup_spots.get_children():
+		if point is Marker2D:
+			pickup_points.append(point)
+			
+	_on_compass_check_timer_timeout()
+	
+	for point in dropoff_spots.get_children():
+		if point is Marker2D:
+			point.update()
+			dropoff_points.append(point)
+			
+	if dropoff_points:
+		find_new_dropoff()
 		
+	Data.time_left = time
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	

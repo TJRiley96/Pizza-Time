@@ -4,11 +4,15 @@ extends Node
 var game_manager_scene: PackedScene = preload("res://game_manager.tscn")
 var audio_manager_scene: PackedScene = preload("res://audio_manager.tscn")
 
+@onready var world: Node2D = $World
 @onready var hud_layer: CanvasLayer = $HudLayer
 @onready var main_menu_layer: CanvasLayer = $MainMenuLayer
 @onready var pause_layer: CanvasLayer = $PauseLayer
 @onready var game_over_layer: CanvasLayer = $GameOverLayer
 
+var player_scene: PackedScene = preload("res://Scenes/Car/car.tscn")
+
+var prototype_level_scene: PackedScene = preload("res://Levels/Prototype/prototype_level.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +41,19 @@ func pause() -> void:
 func unpause() -> void:
 	pause_layer.hide()
 	get_tree().paused = false
+
+func start_game() -> void:
+	var level: Level = prototype_level_scene.instantiate()
+	var player: Car = player_scene.instantiate()
+	
+	world.add_child(player)
+	world.add_child(level)
+	
+	Global.in_game = true
+	hud_layer.show()
+	game_over_layer.hide()
+	main_menu_layer.hide()
+	unpause()
 
 func _unhandled_input(event: InputEvent) -> void:
 	
