@@ -76,9 +76,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		acceleration = Vector2.ZERO
 		get_input()
+		apply_friction(delta)
 		calculate_steering(delta)
 		velocity += acceleration * delta
-		apply_friction(delta)
+		
 		set_animation()
 	
 	

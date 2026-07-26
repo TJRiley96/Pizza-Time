@@ -92,7 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 
 func _main_menu() -> void:
-	Global.audio_manager.switch_song()
+	Global.audio_manager.switch_song_menu()
 	end_game()
 
 

@@ -21,6 +21,14 @@ func play_music() -> void:
 func stop_music() -> void:
 	audio_stream_player.stop()
 
+
+func switch_song_menu() -> void:
+	audio_stream_player.stream = load("res://Assets/Audio/JDB_Isolation.wav")
+	audio_stream_player.play()
+
+func switch_song_game() -> void:
+	audio_stream_player.stream = load("res://Assets/Audio/Saving the City 16-bit - Loop.wav")
+	audio_stream_player.play()
 func switch_song() -> void:
 	if in_menu:
 		audio_stream_player.stream = load("res://Assets/Audio/Saving the City 16-bit - Loop.wav")

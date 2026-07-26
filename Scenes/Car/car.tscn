@@ -436,9 +436,11 @@ scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_y6gko")
-tank_controls = true
 steering_angle = 30.0
-engine_power = 100
+engine_power = 500
+friction = -10.0
+slip_speed = 100
+traction_slow = 17.5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=364256406]
 texture = SubResource("CompressedTexture2D_e7e8e")

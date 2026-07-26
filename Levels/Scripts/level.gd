@@ -34,7 +34,7 @@ func _ready() -> void:
 		find_new_dropoff()
 		
 	Data.time_left = time
-	Global.audio_manager.switch_song()
+	Global.audio_manager.switch_song_game()
 	Data.points = 0
 	Data.bao_amount = 3
 
@@ -75,10 +75,10 @@ func find_new_dropoff() -> void:
 		car.current_dropoff = dropoff_points.pick_random()
 		while(car.current_dropoff == car.old_dropoff):
 			car.current_dropoff = dropoff_points.pick_random()
-			print(car.current_dropoff == car.old_dropoff)
+			#print(car.current_dropoff == car.old_dropoff)
 		car.current_dropoff.is_active = true
 		car.current_dropoff.update()
-		print(car.current_dropoff)
+		#print(car.current_dropoff)
 
 func add_timer(amount: int) -> void:
 	time += amount
