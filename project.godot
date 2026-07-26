@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Pizza Time"
+config/name="Dumpling Delivery"
+config/version="0.1"
 run/main_scene="uid://dv0ipqyhwkq3l"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://clmenbx57wjj7"
+config/icon="uid://clmenbx57wjj7"
 
 [autoload]
 
