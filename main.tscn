@@ -164,6 +164,20 @@ size_flags_horizontal = 4
 texture = ExtResource("3_7mycd")
 expand_mode = 2
 
+[node name="Label" type="Label" parent="HudLayer/Hud" unique_id=941702360]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_bottom = -10.0
+grow_vertical = 0
+text = "W - Foward
+A, D - Left and Right
+Shift, S - Backward
+Red -Restore Dumplings
+Green - Dropoff Delivery"
+
 [node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=441337859]
 process_mode = 3
 
