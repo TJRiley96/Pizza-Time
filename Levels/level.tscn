@@ -10,7 +10,6 @@ z_index = -3
 
 [node name="RoadLayer" type="TileMapLayer" parent="." unique_id=977795131]
 z_index = -2
-position = Vector2(1, 0)
 
 [node name="GrassLayer" type="TileMapLayer" parent="." unique_id=175490998]
 z_index = -1
@@ -20,15 +19,12 @@ z_index = -1
 
 [node name="BottomBuildingLayer" type="TileMapLayer" parent="." unique_id=444366417]
 z_index = 1
-position = Vector2(1, 0)
 
 [node name="TopBuildingLayer" type="TileMapLayer" parent="." unique_id=621704939]
 z_index = 1
-position = Vector2(1, 0)
 
 [node name="MiscLayer" type="TileMapLayer" parent="." unique_id=386655072]
 z_index = 3
-position = Vector2(1, 0)
 
 [node name="PickupSpots" type="Node2D" parent="." unique_id=986337865]
 
