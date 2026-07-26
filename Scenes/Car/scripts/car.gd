@@ -13,6 +13,8 @@ const JUMP_VELOCITY = -400.0
 
 var direction: float
 
+@export var tank_controls: bool = false
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var pickup_compass: Sprite2D = $PickupCompass
 @onready var dropoff_compass: Sprite2D = $DropoffCompass
@@ -22,6 +24,10 @@ var old_dropoff: Marker2D
 var current_dropoff: Marker2D
 
 signal pause_menu
+
+# Tank Controls
+#@export var wheel_base: float = 70
+@export var steering_tank_angle: float = 15
 
 # Car controls
 @export var wheel_base: float = 70
@@ -55,16 +61,25 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	acceleration = Vector2.ZERO
-	get_input()
 	
-	calculate_steering(delta)
-	velocity += acceleration * delta
-	apply_friction(delta)
+	
+	
+	
 	
 	point_pickup_compass()
 	point_dropoff_compass()
 	
+	if tank_controls:
+		get_tank_input()
+		tank_control(delta)
+		set_tank_animation()
+	else:
+		acceleration = Vector2.ZERO
+		get_input()
+		calculate_steering(delta)
+		velocity += acceleration * delta
+		apply_friction(delta)
+		set_animation()
 	
 	
 	#
@@ -72,12 +87,12 @@ func _physics_process(delta: float) -> void:
 	
 	#if steer_direction:
 			#calculate_steering(delta)
-	set_animation()
+	
 	move_and_slide()
 
 func tank_control(delta: float) -> void:
 	if throttle:
-		rotation += steer_direction * steering_angle * delta
+		rotation += steer_direction * steering_tank_angle * delta
 		velocity = throttle * SPEED * transform.x	
 		$Sprite2D.rotation = -rotation	
 	else:
@@ -153,6 +168,15 @@ func set_animation() -> void:
 			#anim_direction = -(anim_direction)
 		animation_tree.set("parameters/Driving/blend_position", anim_direction)
 		#print(velocity.normalized())
+
+func set_tank_animation() -> void:
+	if velocity:
+		var anim_direction = velocity.normalized()
+		if Input.is_action_pressed("throttle_backwards"):
+			anim_direction = -(anim_direction)
+		animation_tree.set("parameters/Driving/blend_position", anim_direction)
+		#print(velocity.normalized())
+
 
 #func _unhandled_input(event: InputEvent) -> void:
 	#
